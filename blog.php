@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles_blog.css">
     <link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap" rel="stylesheet"> 
     <title>Blog</title>
 </head>
@@ -21,11 +21,8 @@
     </header>    
     
     <main id = contend>
-        <h1>Willkommen bei meinem Blog</h1>
-        <p>Willkommenstext</p>   
-
         <?php 
-            /*$pdo = new PDO('mysql:host=localhost;dbname=blog_databank', 'root', '', [
+            $pdo = new PDO('mysql:host=localhost;dbname=blog_databank', 'root', '', [
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
                 PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
             ]);
@@ -42,11 +39,10 @@
                     echo $zeile["post_text"];
                     echo '</div>';
                 echo '</div>';
-            } */
+            }
 
         ?>
-        
-    </main>
+        </main>
 
         <div id="links-kollegen">
         <ul>
