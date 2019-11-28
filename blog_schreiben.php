@@ -13,40 +13,78 @@
     <header id = header> 
         <nav>
             <ul class=menu> 
-                <li class="navhome"><a href="http://localhost/blog_projekt/blog/">Home</a></li>
-                <li class="navblog"><a href="http://localhost/blog_projekt/blog/blog.php">Blog</a></li>
-                <li class="naverstellen"><a href="http://localhost/blog_projekt/blog/blog_schreiben.php">Blog erstellen</a></li>
+            <li class="navhome"><a href="http://10.20.18.107/blog_projekt/blog/">Home</a></li>
+                <li class="navblog"><a href="http://10.20.18.107/blog_projekt/blog/blog.php">Blog</a></li>
+                <li class="naverstellen"><a href="http://10.20.18.107/blog_projekt/blog/blog_schreiben.php">Blog erstellen</a></li>
             </ul> 
         </nav>
     </header>    
     
     <main id = contend>
         <?php 
-            /*$pdo = new PDO('mysql:host=localhost;dbname=blog_databank', 'root', '', [
-                PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
-            ]);
+         
+            $creator = $_POST['created_by'] ?? ''; 
+            $title = $_POST['post_title'] ?? '';
+            $post = $_POST['post_text'] ?? '';
 
-            $stmt = $pdo->query('SELECT * FROM `blog`');
+            if($_SERVER['REQUEST_METHOD'] === 'POST') {
+                
+                $user ="root";
+                $password ="";
 
-            $alleZeilen = $stmt->fetchAll();    
+                $pdo = new PDO('mysql:host=localhost;dbname=blog_databank', $user, $password, [
+                    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+                    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+                ]);
+                
+                //            $stmt = $pdo->prepare("INSERT INTO `blog` ('created_by', 'post_title', 'post_text') VALUES ('$creator', '$title', '$post')");
 
-            foreach($alleZeilen as $zeile) {
-                echo '<div class="post">';
-                echo '<h2>' . $zeile["post_title"] . '</h2>';
-                echo 'gepostet von: ' . $zeile["created_by"] . '<br>am: ' . $zeile["created_at"] .  '<br>';
-                    echo '<div class="post-text">';
-                    echo $zeile["post_text"];
-                    echo '</div>';
-                echo '</div>';
-            } */
+                if ($creator != '' && $title != '' && $post !='') {
 
+                    $stmt = $pdo->prepare("INSERT INTO `blog` (created_by, post_title, post_text) VALUES (:created, :title, :post) ");
+                    $stmt->execute([':created' => $creator, ':title' => $title, ':post' => $post ]);
+
+                    echo '<p style="font-size: 2em; font-weight: bold;">OK</p>';
+
+                    $creator =  '';
+                    $title =  '';
+                    $post =  '';
+
+                } else {
+                    echo '<p style="font-size: 2em; font-weight: bold;">Formular nicht ausgefüllt, bitte füllen Sie alle Felder aus!</p>';
+                }
+            }
         ?>
-        </main>
+
+        <form action="blog_schreiben.php" method="post">
+        <div class="textfelder">
+            <div class="name_title">
+            <fieldset>
+                    <legenden>Bitte geben Sie Ihren Namen und Titel des Blogs ein</legenden>
+
+                    <label for="created_by">Name</label>
+                    <input type="text" id="created_by" name="created_by" value="<?= $creator ?>">
+
+                    <label for="post_title">Titel des Blogbeitrag</label>
+                    <input type="text" id="post_title" name="post_title" value="<?= $title ?>">
+            </fieldset>
+            </div>
+            <div class="blogbeitrag">
+            <fieldset>
+            <legenden>Was möchten Sie schreiben?</legenden>
+                <label for="post_text">Blogbeitrag</label>
+                <input type="text" id="post_text" name="post_text" value="<?= $post ?>">
+                <input type="submit" value="Formular absenden">
+            </fieldset>
+            </div>
+        </div> 
+        </form>       
+    </main>
+
 
         <div id="links-kollegen">
         <ul>
-            <li><a href="http://10.20.18.105/blog/" target="_blank">Marvin's scheiss Blog</a></li>    
+            <li><a href="http://10.20.18.105/blog/" target="_blank">Marvin's "minderwertiger" Blog</a></li>    
             <li><a href="http://10.20.18.106" target="_blank">Moritz's Blog</a></li>
             <li><a href="http://10.20.18.112" target="_blank">Erin's Blog</a></li>
             <li><a href="http://10.20.18.110" target="_blank">Luca's Blog</a></li>

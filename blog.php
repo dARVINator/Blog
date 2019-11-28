@@ -13,9 +13,9 @@
     <header id = header> 
         <nav>
             <ul class=menu> 
-                <li class="navhome"><a href="http://localhost/blog_projekt/blog/">Home</a></li>
-                <li class="navblog"><a href="http://localhost/blog_projekt/blog/blog.php">Blog</a></li>
-                <li class="naverstellen"><a href="http://localhost/blog_projekt/blog/blog_schreiben.php">Blog erstellen</a></li>
+            <li class="navhome"><a href="http://10.20.18.107/blog_projekt/blog/">Home</a></li>
+                <li class="navblog"><a href="http://10.20.18.107/blog_projekt/blog/blog.php">Blog</a></li>
+                <li class="naverstellen"><a href="http://10.20.18.107/blog_projekt/blog/blog_schreiben.php">Blog erstellen</a></li>
             </ul> 
         </nav>
     </header>    
@@ -35,7 +35,7 @@
                 echo '<div class="post">';
                 echo '<h2>' . $zeile["post_title"] . '</h2>';
                 echo 'gepostet von: ' . $zeile["created_by"] . '<br>am: ' . $zeile["created_at"] .  '<br>';
-                    echo '<div class="post-text">';
+                    echo '<div class="post-te"xt">';
                     echo $zeile["post_text"];
                     echo '</div>';
                 echo '</div>';

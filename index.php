@@ -13,9 +13,9 @@
     <header id = header> 
         <nav>
             <ul class=menu> 
-                <li class="navhome"><a href="http://localhost/blog_projekt/blog/">Home</a></li>
-                <li class="navblog"><a href="http://localhost/blog_projekt/blog/blog.php">Blog</a></li>
-                <li class="naverstellen"><a href="http://localhost/blog_projekt/blog/blog_schreiben.php">Blog erstellen</a></li>
+                <li class="navhome"><a href="http://10.20.18.107/blog_projekt/blog/">Home</a></li>
+                <li class="navblog"><a href="http://10.20.18.107/blog_projekt/blog/blog.php">Blog</a></li>
+                <li class="naverstellen"><a href="http://10.20.18.107/blog_projekt/blog/blog_schreiben.php">Blog erstellen</a></li>
             </ul> 
         </nav>
     </header>    
