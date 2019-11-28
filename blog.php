@@ -35,7 +35,7 @@
                 echo '<div class="post">';
                 echo '<h2>' . $zeile["post_title"] . '</h2>';
                 echo 'gepostet von: ' . $zeile["created_by"] . '<br>am: ' . $zeile["created_at"] .  '<br>';
-                    echo '<div class="post-te"xt">';
+                    echo '<div class="post-text">';
                     echo $zeile["post_text"];
                     echo '</div>';
                 echo '</div>';
@@ -44,7 +44,8 @@
         ?>
         </main>
 
-        <div id="links-kollegen">
+    <footer id = footer>
+    <div id="links-kollegen">
         <ul>
             <li><a href="http://10.20.18.105/blog/" target="_blank">Marvin's scheiss Blog</a></li>    
             <li><a href="http://10.20.18.106" target="_blank">Moritz's Blog</a></li>
@@ -57,9 +58,6 @@
 
         </ul>
         </div>
-
-    <footer id = footer>
-
     </footer>
 
     </div>

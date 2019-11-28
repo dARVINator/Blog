@@ -22,35 +22,41 @@
     
     <main id = contend>
         <h1>Willkommen bei meinem Blog</h1>
-        <p>Willkommenstext</p>   
+        <p>Willkommenstext</p> 
+        <p>Herzlich Willkommen auf meinem   
 
         <?php 
-            /*$pdo = new PDO('mysql:host=localhost;dbname=blog_databank', 'root', '', [
+            /*Die Links von der Datenbank zu den Blogs der anderen*/
+            $user = 'blj';
+            $password = '123';
+
+
+            $pdo = new PDO('mysql:host=10.20.18.111;dbname=ipadressen', "$user", "$password", [
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
                 PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
             ]);
 
-            $stmt = $pdo->query('SELECT * FROM `blog`');
+            $stmt = $pdo->query('SELECT * FROM `ipadressen`');
 
-            $alleZeilen = $stmt->fetchAll();    
+            $alle_ips = $stmt->fetchAll();
+            
+            echo ("$alle_ips")
 
-            foreach($alleZeilen as $zeile) {
-                echo '<div class="post">';
-                echo '<h2>' . $zeile["post_title"] . '</h2>';
-                echo 'gepostet von: ' . $zeile["created_by"] . '<br>am: ' . $zeile["created_at"] .  '<br>';
-                    echo '<div class="post-text">';
-                    echo $zeile["post_text"];
-                    echo '</div>';
-                echo '</div>';
-            } */
+            //foreach($alle_ips as $link_kollegen) {
+                
+            //}
 
         ?>
         
     </main>
 
-        <div id="links-kollegen">
+    <footer id = footer>
+    <p>
+        Die Blogs meiner BLJ-Kollogen
+    </p>   
+        <!--<div id="links-kollegen"> 
         <ul>
-            <li><a href="http://10.20.18.105/blog/" target="_blank">Marvin's scheiss Blog</a></li>    
+            <li><a href="http://10.20.18.104/blog/" target="_blank">Marvin's scheiss Blog</a></li>    
             <li><a href="http://10.20.18.106" target="_blank">Moritz's Blog</a></li>
             <li><a href="http://10.20.18.112" target="_blank">Erin's Blog</a></li>
             <li><a href="http://10.20.18.110" target="_blank">Luca's Blog</a></li>
@@ -60,10 +66,7 @@
             <li><a href="http://10.20.18.111" target="_blank">Nicola's Blog</a></li>
 
         </ul>
-        </div>
-
-    <footer id = footer>
-
+        </div>-->
     </footer>
 
     </div>

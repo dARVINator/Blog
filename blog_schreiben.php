@@ -81,8 +81,8 @@
         </form>       
     </main>
 
-
-        <div id="links-kollegen">
+    <footer id = footer>
+    <div id="links-kollegen">
         <ul>
             <li><a href="http://10.20.18.105/blog/" target="_blank">Marvin's "minderwertiger" Blog</a></li>    
             <li><a href="http://10.20.18.106" target="_blank">Moritz's Blog</a></li>
@@ -92,12 +92,8 @@
             <li><a href="http://10.20.18.108" target="_blank">Davide's Blog</a></li>
             <li><a href="http://10.20.18.105:8888/" target="_blank">Joshua's Blog</a></li>
             <li><a href="http://10.20.18.111" target="_blank">Nicola's Blog</a></li>
-
         </ul>
-        </div>
-
-    <footer id = footer>
-
+    </div>    
     </footer>
 
     </div>
