@@ -66,10 +66,8 @@ nav {
 }
 
 #links-kollegen {
-    display: flex;
-    justify-content: center;
-
     list-style-type: none;
+    
 }
 
 .post {

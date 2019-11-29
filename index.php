@@ -21,32 +21,25 @@
     </header>    
     
     <main id = contend>
-        <h1>Willkommen bei meinem Blog</h1>
-        <p>Willkommenstext</p> 
-        <p>Herzlich Willkommen auf meinem   
-
-        <?php 
-            /*Die Links von der Datenbank zu den Blogs der anderen*/
-            $user = 'blj';
-            $password = '123';
-
-
-            $pdo = new PDO('mysql:host=10.20.18.111;dbname=ipadressen', "$user", "$password", [
-                PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
-            ]);
-
-            $stmt = $pdo->query('SELECT * FROM `ipadressen`');
-
-            $alle_ips = $stmt->fetchAll();
-            
-            echo ("$alle_ips")
-
-            //foreach($alle_ips as $link_kollegen) {
-                
-            //}
-
-        ?>
+        <div>
+            <h1>Willkommen bei meinem Blog</h1>
+            <div>
+            <p>Willkommenstext</p> 
+            <p>Herzlich Willkommen auf meinem Blog<br>
+                Das ist mein selber Programmierte Blog den ich im Basislehrjahr erstellt habe.<br>
+                Er dient als Übung um meine PHP Kentnisse zu schulen.<br>
+                Die Repetition fürs HTML und CSS ist auch gewährleistet.<br>
+            </p>    
+            <p>
+                Sie können sich gerne ein bisschen auf im umschauen.<br>
+                Sie können die Blog beiträge von anderen anschauen.<br>
+                Wenn Sie möchten können sie auch gerne einen Blog verfassen und ihn dann auf dieser Seite veröffentlichen.<br>
+                Ich hoffe das Ihnen mein Blog gefällt.<br>
+                Wenn Sie etwas über den Blog meiner BLJ-Kollegen erfahren wollen, scrollen sie einfach herunter.<br>
+                Sie sind alle verlinkt(momentan noch einige technische Schwierigkeiten). 
+            </p>    
+            </div>
+        </div>
         
     </main>
 
@@ -54,19 +47,25 @@
     <p>
         Die Blogs meiner BLJ-Kollogen
     </p>   
-        <!--<div id="links-kollegen"> 
-        <ul>
-            <li><a href="http://10.20.18.104/blog/" target="_blank">Marvin's scheiss Blog</a></li>    
-            <li><a href="http://10.20.18.106" target="_blank">Moritz's Blog</a></li>
-            <li><a href="http://10.20.18.112" target="_blank">Erin's Blog</a></li>
-            <li><a href="http://10.20.18.110" target="_blank">Luca's Blog</a></li>
-            <li><a href="http://10.20.18.109/blog/" target="_blank">Alessio's Blog</a></li>
-            <li><a href="http://10.20.18.108" target="_blank">Davide's Blog</a></li>
-            <li><a href="http://10.20.18.105:8888/" target="_blank">Joshua's Blog</a></li>
-            <li><a href="http://10.20.18.111" target="_blank">Nicola's Blog</a></li>
+        <div id="links-kollegen"> 
 
-        </ul>
-        </div>-->
+        <?php 
+            /*Die Links von der Datenbank zu den Blogs der anderen*/
+            $user = 'd041e_gibucher';
+            $password = '54321_Db!!!';
+
+            $pdo = new PDO('mysql:host=10.20.18.122;dbname=d041e_gibucher', $user, $password, [
+                PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+            ]);
+
+            $stmt = $pdo->query('SELECT * FROM `ipadressen`');
+            foreach($stmt->fetchAll() as $ipadressen) {
+                echo '<li><a href="http://' . $ipadressen ["Ip"] . '" target="_blank">' . $ipadressen ["vorname"] . '</a></li>';
+            }
+        ?>
+
+        </div>
     </footer>
 
     </div>
