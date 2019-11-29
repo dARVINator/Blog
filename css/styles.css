@@ -31,12 +31,18 @@ body {
 }
 
 nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: black;
-
-    font-size: 180%;
+    text-align: center;
+    
+    font-size: 200%;
+}
+.navhome {
+    padding-right: 10%;
+}
+.navblog {
+    padding-right: 10%;
+}
+.naverstellen {
+    padding-right: 10%;
 }
 
 .menu {
@@ -58,16 +64,25 @@ nav {
     padding-top: 20px;
 
 }
+.willkommenstext {
+    font-size: 140%;
+}
 
 #footer {
     grid-area: footer;
     background-color: rgb(255, 154, 2);
+    text-align: center; 
+    font-size: 140%; 
+
+    padding-bottom: 30px;
 
 }
 
 #links-kollegen {
     list-style-type: none;
+    text-align: center;
     
+
 }
 
 .post {
@@ -84,4 +99,10 @@ nav {
 
 h2 {
     margin-bottom: 2px;
+}
+a:hover {
+    color: darkred;
+}
+a{
+    color: black;
 }

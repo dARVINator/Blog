@@ -23,7 +23,7 @@
     <main id = contend>
         <div>
             <h1>Willkommen bei meinem Blog</h1>
-            <div>
+            <div class="willkommenstext">
             <p>Willkommenstext</p> 
             <p>Herzlich Willkommen auf meinem Blog<br>
                 Das ist mein selber Programmierte Blog den ich im Basislehrjahr erstellt habe.<br>
