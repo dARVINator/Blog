@@ -23,38 +23,38 @@
     <main id = contend>
         <?php 
          
-            $creator = $_POST['created_by'] ?? ''; 
-            $title = $_POST['post_title'] ?? '';
-            $post = $_POST['post_text'] ?? '';
-            $URL =  $_POST['picture'] ?? '';
+            $creator = htmlentities($_POST['created_by'] ?? ''); 
+            $title = htmlentities($_POST['post_title'] ?? '');
+            $post = htmlentities($_POST['post_text'] ?? '');
+            $URL =  htmlentities($_POST['picture'] ?? '');
 
             if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
                 $user ="root";
                 $password ="";
-
-                $pdo = new PDO('mysql:host=localhost;dbname=blog_databank', $user, $password, [
-                    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-                    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
-                ]);
                 
-                //            $stmt = $pdo->prepare("INSERT INTO `blog` ('created_by', 'post_title', 'post_text') VALUES ('$creator', '$title', '$post')");
+                    $pdo = new PDO('mysql:host=localhost;dbname=blog_databank', $user, $password, [
+                        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+                        PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+                    ]);
+                    
+                    //            $stmt = $pdo->prepare("INSERT INTO `blog` ('created_by', 'post_title', 'post_text') VALUES ('$creator', '$title', '$post')");
 
-                if ($creator != '' && $title != '' && $post !='') {
+                    if ($creator != '' && $title != '' && $post !='') {
 
-                    $stmt = $pdo->prepare("INSERT INTO `blog` (created_by, post_title, post_text, picture) VALUES (:created, :title, :post, :picture) ");
-                    $stmt->execute([':created' => $creator, ':title' => $title, ':post' => $post, ':picture' => $URL]);
+                        $stmt = $pdo->prepare("INSERT INTO `blog` (created_by, post_title, post_text, picture) VALUES (:created, :title, :post, :picture) ");
+                        $stmt->execute([':created' => $creator, ':title' => $title, ':post' => $post, ':picture' => $URL]);
 
-                    echo '<p style="font-size: 2em; font-weight: bold;">OK</p>';
+                        echo '<p style="font-size: 2em; font-weight: bold;">OK</p>';
 
-                    $creator =  '';
-                    $title =  '';
-                    $post =  '';
-                    $URL = '';
+                        $creator =  '';
+                        $title =  '';
+                        $post =  '';
+                        $URL = '';
 
-                } else {
-                    echo '<p style="font-size: 2em; font-weight: bold;">Formular nicht ausgefüllt, bitte füllen Sie alle Felder aus!</p>';
-                }
+                    } else {
+                        echo '<p style="font-size: 2em; font-weight: bold;">Formular nicht ausgefüllt, bitte füllen Sie alle Felder aus!</p>';
+                    }
             }
             
         ?>
@@ -74,7 +74,7 @@
             </div>
             <div class="blogbeitrag">
             <fieldset>
-            <legenden class="legenden">Was möchten Sie schreiben?<br></legenden>
+            <legenden class="legenden">Über was möchten sie schreiben? <br> Sie können auch die URL von einem Bild einfügen<br></legenden>
                 <label for="picture">Bild URL<br></label>
                 <input type="text" id="picture" name="picture" value="<?= $URL ?>">
 

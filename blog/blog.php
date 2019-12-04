@@ -29,7 +29,7 @@
                 PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
             ]);
 
-            $stmt = $pdo->query('SELECT * FROM `blog`');
+            $stmt = $pdo->query('SELECT * FROM `blog` ORDER BY id DESC');
 
             $alleZeilen = $stmt->fetchAll();    
 
@@ -39,8 +39,7 @@
                 echo 'gepostet von: ' . $zeile["created_by"] . '<br>am: ' . $zeile["created_at"] .  '<br>';
                     echo '<div class="post-text">';
                     echo $zeile["post_text"] . '<br>';
-                    echo $zeile["picture"];
-                    echo '<img src=' . $zeile["picture"] . '<br>';
+                    echo '<img src=' . $zeile["picture"] . '><br>';
                     echo '</div>';
                 echo '</div>';
             }

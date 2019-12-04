@@ -18,7 +18,6 @@ body {
         "footer footer footer";
 
     border-top: 10px;    
-    ;
 }
 
 /*Alles für den Header*/
@@ -70,14 +69,30 @@ nav {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
-
+    padding-bottom: 20px;
+    
 }
 
 /*Das darunter kann von Seite zu Seite anders sein*/
-.willkommenstext {
-    font-size: 140%;
+#created_by {
+    display: flex;
+    justify-content: center;
 }
-
+#post_title {
+    display: flex;
+    justify-content: center;
+}
+#post_text {
+    display: flex;
+    justify-content: center;
+}
+#picture {
+    display: flex;
+    justify-content: center;
+}
+.legenden {
+    text-align: center;
+}
 
 /*Alles für den footer*/
 
