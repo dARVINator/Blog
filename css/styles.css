@@ -1,9 +1,11 @@
+/*body und container nicht löschen*/
 body {
     font-family: 'Calistoga', cursive;
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 0;
+
 }
 
 #container {
@@ -13,10 +15,13 @@ body {
     grid-template-areas: 
         "header header header"
         "contend contend contend"
-        "footer footer footer"
+        "footer footer footer";
+
+    border-top: 10px;    
     ;
 }
 
+/*Alles für den Header*/
 #header {
     background-color: rgb(255, 154, 2);
     grid-area: header;
@@ -54,6 +59,9 @@ nav {
     overflow: hidden;
 }
 
+
+/*Hier ist der Hauptteil*/
+
 #contend {
     background-color: black;
     grid-area: contend;
@@ -64,9 +72,14 @@ nav {
     padding-top: 20px;
 
 }
+
+/*Das darunter kann von Seite zu Seite anders sein*/
 .willkommenstext {
     font-size: 140%;
 }
+
+
+/*Alles für den footer*/
 
 #footer {
     grid-area: footer;
@@ -81,10 +94,14 @@ nav {
 #links-kollegen {
     list-style-type: none;
     text-align: center;
-    
+    border-left: 10px;  
+    border-right: 10px;
+    border-bottom: 10px;
+    border-top: 10px; 
 
 }
 
+/*CSS für die Blogbeiträge*/
 .post {
     margin-bottom: 10px;
     border-bottom: solid 1px rgb(230, 139, 4);
@@ -97,6 +114,7 @@ nav {
     padding-bottom: 10px;
 }
 
+/*links und Übertitel*/
 h2 {
     margin-bottom: 2px;
 }

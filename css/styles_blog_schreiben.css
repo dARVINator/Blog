@@ -1,9 +1,11 @@
+/*body und container nicht löschen*/
 body {
     font-family: 'Calistoga', cursive;
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 0;
+
 }
 
 #container {
@@ -13,10 +15,13 @@ body {
     grid-template-areas: 
         "header header header"
         "contend contend contend"
-        "footer footer footer"
+        "footer footer footer";
+
+    border-top: 10px;    
     ;
 }
 
+/*Alles für den Header*/
 #header {
     background-color: rgb(255, 154, 2);
     grid-area: header;
@@ -31,12 +36,18 @@ body {
 }
 
 nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: black;
-
-    font-size: 180%;
+    text-align: center;
+    
+    font-size: 200%;
+}
+.navhome {
+    padding-right: 10%;
+}
+.navblog {
+    padding-right: 10%;
+}
+.naverstellen {
+    padding-right: 10%;
 }
 
 .menu {
@@ -48,6 +59,9 @@ nav {
     overflow: hidden;
 }
 
+
+/*Hier ist der Hauptteil*/
+
 #contend {
     background-color: black;
     grid-area: contend;
@@ -56,17 +70,56 @@ nav {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
-
+    
 }
+
+/*Das darunter kann von Seite zu Seite anders sein*/
+#created_by {
+    display: flex;
+    justify-content: center;
+}
+#post_title {
+    display: flex;
+    justify-content: center;
+}
+#post_text {
+    display: flex;
+    justify-content: center;
+}
+#picture {
+    display: flex;
+    justify-content: center;
+}
+.legenden {
+    text-align: center;
+}
+
+/*Alles für den footer*/
 
 #footer {
     grid-area: footer;
+    background-color: rgb(255, 154, 2);
+    text-align: center; 
+    font-size: 140%; 
+
+    padding-bottom: 30px;
 
 }
 
+#links-kollegen {
+    list-style-type: none;
+    text-align: center;
+    border-left: 10px;  
+    border-right: 10px;
+    border-bottom: 10px;
+    border-top: 10px; 
+
+}
+
+/*CSS für die Blogbeiträge*/
 .post {
     margin-bottom: 10px;
-    border-bottom: solid 1px rgb(255, 154, 2);
+    border-bottom: solid 1px rgb(230, 139, 4);
     padding-bottom: 5px;
 }
 
@@ -76,6 +129,13 @@ nav {
     padding-bottom: 10px;
 }
 
+/*links und Übertitel*/
 h2 {
     margin-bottom: 2px;
+}
+a:hover {
+    color: darkred;
+}
+a{
+    color: black;
 }

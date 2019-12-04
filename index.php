@@ -13,9 +13,9 @@
     <header id = header> 
         <nav>
             <ul class=menu> 
-                <li class="navhome"><a href="http://10.20.18.107/blog_projekt/blog/">Home</a></li>
-                <li class="navblog"><a href="http://10.20.18.107/blog_projekt/blog/blog.php">Blog</a></li>
-                <li class="naverstellen"><a href="http://10.20.18.107/blog_projekt/blog/blog_schreiben.php">Blog erstellen</a></li>
+                <li class="navhome"><a href="http://10.20.18.106/blog_projekt/blog/">Home</a></li>
+                <li class="navblog"><a href="http://10.20.18.106/blog_projekt/blog/blog.php">Blog</a></li>
+                <li class="naverstellen"><a href="http://10.20.18.106/blog_projekt/blog/blog_schreiben.php">Blog erstellen</a></li>
             </ul> 
         </nav>
     </header>    
@@ -36,7 +36,7 @@
                 Wenn Sie möchten können sie auch gerne einen Blog verfassen und ihn dann auf dieser Seite veröffentlichen.<br>
                 Ich hoffe das Ihnen mein Blog gefällt.<br>
                 Wenn Sie etwas über den Blog meiner BLJ-Kollegen erfahren wollen, scrollen sie einfach herunter.<br>
-                Sie sind alle verlinkt(momentan noch einige technische Schwierigkeiten). 
+                Sie sind alle verlinkt. 
             </p>    
             </div>
         </div>
@@ -45,7 +45,7 @@
 
     <footer id = footer>
     <p>
-        Die Blogs meiner BLJ-Kollogen
+        Die Blogs meiner BLJ-Kollegen
     </p>   
         <div id="links-kollegen"> 
 
